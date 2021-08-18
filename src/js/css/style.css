@@ -1,0 +1,964 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100vh;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+body {
+  height: 100%;
+  background: url("../images/bg-stars.svg") top/100% 80% no-repeat, url("../images/pattern-hills.svg") bottom/100% 20% no-repeat, -webkit-gradient(linear, left top, left bottom, from(#1e1e28), to(#251d2c));
+  background: url("../images/bg-stars.svg") top/100% 80% no-repeat, url("../images/pattern-hills.svg") bottom/100% 20% no-repeat, linear-gradient(to bottom, #1e1e28, #251d2c);
+  background-repeat: no-repeat;
+}
+
+body .container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .title {
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1440px) {
+  body .container .title {
+    font-size: 1rem;
+    margin: 8rem;
+    letter-spacing: 0.8rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  body .container .title {
+    font-size: 0.9rem;
+    margin: 5rem;
+    letter-spacing: 0.7rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1024px) {
+  body .container .title {
+    font-size: 0.8rem;
+    margin: 4rem;
+    letter-spacing: 0.6rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .title {
+    text-align: center;
+    font-size: 0.7rem;
+    margin: 5rem 0rem;
+    letter-spacing: 0.5rem;
+  }
+}
+
+body .container .modalBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  padding: 0;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+body .container .modalBtn img {
+  padding: 0.2rem;
+  color: #251d2c;
+}
+
+body .container .modalBtn:hover {
+  -webkit-filter: invert(58%) sepia(38%) saturate(4955%) hue-rotate(310deg) brightness(101%) contrast(102%);
+          filter: invert(58%) sepia(38%) saturate(4955%) hue-rotate(310deg) brightness(101%) contrast(102%);
+}
+
+body .container .countdown-clock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60rem;
+}
+
+@media (min-width: 1440px) {
+  body .container .countdown-clock {
+    width: 60rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  body .container .countdown-clock {
+    width: 50rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1024px) {
+  body .container .countdown-clock {
+    width: 40rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock {
+    width: 20rem;
+  }
+}
+
+body .container .countdown-clock .countdown {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .countdown-clock .countdown .countdown-card, body .container .countdown-clock .countdown .flip-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 1440px) {
+  body .container .countdown-clock .countdown .countdown-card, body .container .countdown-clock .countdown .flip-card {
+    width: 12rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  body .container .countdown-clock .countdown .countdown-card, body .container .countdown-clock .countdown .flip-card {
+    width: 10rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1024px) {
+  body .container .countdown-clock .countdown .countdown-card, body .container .countdown-clock .countdown .flip-card {
+    width: 8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .countdown-card, body .container .countdown-clock .countdown .flip-card {
+    width: 4rem;
+  }
+}
+
+body .container .countdown-clock .countdown .countdown-card .card-top, body .container .countdown-clock .countdown .flip-card .card-top {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  background-color: #2c2c44;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 1440px) {
+  body .container .countdown-clock .countdown .countdown-card .card-top, body .container .countdown-clock .countdown .flip-card .card-top {
+    height: 6rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  body .container .countdown-clock .countdown .countdown-card .card-top, body .container .countdown-clock .countdown .flip-card .card-top {
+    height: 5rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1024px) {
+  body .container .countdown-clock .countdown .countdown-card .card-top, body .container .countdown-clock .countdown .flip-card .card-top {
+    height: 4rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .countdown-card .card-top, body .container .countdown-clock .countdown .flip-card .card-top {
+    height: 2rem;
+  }
+}
+
+body .container .countdown-clock .countdown .countdown-card .card-top::before, body .container .countdown-clock .countdown .flip-card .card-top::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100% 0 0;
+  content: " ";
+  background: #1e1e28;
+}
+
+@media (min-width: 376px) {
+  body .container .countdown-clock .countdown .countdown-card .card-top::before, body .container .countdown-clock .countdown .flip-card .card-top::before {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .countdown-card .card-top::before, body .container .countdown-clock .countdown .flip-card .card-top::before {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+}
+
+body .container .countdown-clock .countdown .countdown-card .card-top::after, body .container .countdown-clock .countdown .flip-card .card-top::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 100% 0 0 0;
+  content: " ";
+  background: #1e1e28;
+}
+
+@media (min-width: 376px) {
+  body .container .countdown-clock .countdown .countdown-card .card-top::after, body .container .countdown-clock .countdown .flip-card .card-top::after {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .countdown-card .card-top::after, body .container .countdown-clock .countdown .flip-card .card-top::after {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+}
+
+body .container .countdown-clock .countdown .countdown-card .card-top span, body .container .countdown-clock .countdown .flip-card .card-top span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  line-height: 1;
+  color: #d64f70;
+}
+
+@media (min-width: 1440px) {
+  body .container .countdown-clock .countdown .countdown-card .card-top span, body .container .countdown-clock .countdown .flip-card .card-top span {
+    font-size: 7rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  body .container .countdown-clock .countdown .countdown-card .card-top span, body .container .countdown-clock .countdown .flip-card .card-top span {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1024px) {
+  body .container .countdown-clock .countdown .countdown-card .card-top span, body .container .countdown-clock .countdown .flip-card .card-top span {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .countdown-card .card-top span, body .container .countdown-clock .countdown .flip-card .card-top span {
+    font-size: 2rem;
+  }
+}
+
+body .container .countdown-clock .countdown .countdown-card .card-bottom, body .container .countdown-clock .countdown .flip-card .card-bottom {
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  background-color: #34364f;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 1440px) {
+  body .container .countdown-clock .countdown .countdown-card .card-bottom, body .container .countdown-clock .countdown .flip-card .card-bottom {
+    height: 6rem;
+    -webkit-box-shadow: 0 1rem #1e1e28;
+            box-shadow: 0 1rem #1e1e28;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  body .container .countdown-clock .countdown .countdown-card .card-bottom, body .container .countdown-clock .countdown .flip-card .card-bottom {
+    height: 5rem;
+    -webkit-box-shadow: 0 0.75rem #1e1e28;
+            box-shadow: 0 0.75rem #1e1e28;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1024px) {
+  body .container .countdown-clock .countdown .countdown-card .card-bottom, body .container .countdown-clock .countdown .flip-card .card-bottom {
+    height: 4rem;
+    -webkit-box-shadow: 0 0.5rem #1e1e28;
+            box-shadow: 0 0.5rem #1e1e28;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .countdown-card .card-bottom, body .container .countdown-clock .countdown .flip-card .card-bottom {
+    height: 2rem;
+    -webkit-box-shadow: 0 0.25rem #1e1e28;
+            box-shadow: 0 0.25rem #1e1e28;
+  }
+}
+
+body .container .countdown-clock .countdown .countdown-card .card-bottom::before, body .container .countdown-clock .countdown .flip-card .card-bottom::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0 0 100% 0;
+  content: " ";
+  background: #1e1e28;
+}
+
+@media (min-width: 376px) {
+  body .container .countdown-clock .countdown .countdown-card .card-bottom::before, body .container .countdown-clock .countdown .flip-card .card-bottom::before {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .countdown-card .card-bottom::before, body .container .countdown-clock .countdown .flip-card .card-bottom::before {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+}
+
+body .container .countdown-clock .countdown .countdown-card .card-bottom::after, body .container .countdown-clock .countdown .flip-card .card-bottom::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 0 0 100%;
+  content: " ";
+  background: #1e1e28;
+}
+
+@media (min-width: 376px) {
+  body .container .countdown-clock .countdown .countdown-card .card-bottom::after, body .container .countdown-clock .countdown .flip-card .card-bottom::after {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .countdown-card .card-bottom::after, body .container .countdown-clock .countdown .flip-card .card-bottom::after {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+}
+
+body .container .countdown-clock .countdown .countdown-card .card-bottom span, body .container .countdown-clock .countdown .flip-card .card-bottom span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  line-height: 1;
+  color: #ff5c89;
+}
+
+@media (min-width: 1440px) {
+  body .container .countdown-clock .countdown .countdown-card .card-bottom span, body .container .countdown-clock .countdown .flip-card .card-bottom span {
+    font-size: 7rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  body .container .countdown-clock .countdown .countdown-card .card-bottom span, body .container .countdown-clock .countdown .flip-card .card-bottom span {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1024px) {
+  body .container .countdown-clock .countdown .countdown-card .card-bottom span, body .container .countdown-clock .countdown .flip-card .card-bottom span {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .countdown-card .card-bottom span, body .container .countdown-clock .countdown .flip-card .card-bottom span {
+    font-size: 2rem;
+  }
+}
+
+body .container .countdown-clock .countdown .flip-card {
+  -webkit-perspective: 800px;
+          perspective: 800px;
+  top: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+body .container .countdown-clock .countdown .flip-card .flip-card-top {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  background-color: #2c2c44;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 1440px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-top {
+    height: 6rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-top {
+    height: 5rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1024px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-top {
+    height: 4rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-top {
+    height: 2rem;
+  }
+}
+
+body .container .countdown-clock .countdown .flip-card .flip-card-top::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100% 0 0;
+  content: " ";
+  background: #1e1e28;
+}
+
+@media (min-width: 376px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-top::before {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-top::before {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+}
+
+body .container .countdown-clock .countdown .flip-card .flip-card-top::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 100% 0 0 0;
+  content: " ";
+  background: #1e1e28;
+}
+
+@media (min-width: 376px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-top::after {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-top::after {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+}
+
+body .container .countdown-clock .countdown .flip-card .flip-card-top span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  line-height: 1;
+  color: #d64f70;
+}
+
+@media (min-width: 1440px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-top span {
+    font-size: 7rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-top span {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1024px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-top span {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-top span {
+    font-size: 2rem;
+  }
+}
+
+body .container .countdown-clock .countdown .flip-card .flip-card-bottom {
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  background-color: #34364f;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 1440px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-bottom {
+    height: 6rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-bottom {
+    height: 5rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1024px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-bottom {
+    height: 4rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-bottom {
+    height: 2rem;
+  }
+}
+
+body .container .countdown-clock .countdown .flip-card .flip-card-bottom::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0 0 100% 0;
+  content: " ";
+  background: #1e1e28;
+}
+
+@media (min-width: 376px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-bottom::before {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-bottom::before {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+}
+
+body .container .countdown-clock .countdown .flip-card .flip-card-bottom::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 0 0 100%;
+  content: " ";
+  background: #1e1e28;
+}
+
+@media (min-width: 376px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-bottom::after {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-bottom::after {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+}
+
+body .container .countdown-clock .countdown .flip-card .flip-card-bottom span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  line-height: 1;
+  color: #ff5c89;
+}
+
+@media (min-width: 1440px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-bottom span {
+    font-size: 7rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-bottom span {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1024px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-bottom span {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown .flip-card .flip-card-bottom span {
+    font-size: 2rem;
+  }
+}
+
+@-webkit-keyframes top-to-bottom {
+  0% {
+    -webkit-transform: rotate3d(0);
+            transform: rotate3d(0);
+  }
+  50% {
+    -webkit-transform: rotate3d(-1, 0, 0, 90deg);
+            transform: rotate3d(-1, 0, 0, 90deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(-1, 0, 0, 90deg);
+            transform: rotate3d(-1, 0, 0, 90deg);
+  }
+}
+
+@keyframes top-to-bottom {
+  0% {
+    -webkit-transform: rotate3d(0);
+            transform: rotate3d(0);
+  }
+  50% {
+    -webkit-transform: rotate3d(-1, 0, 0, 90deg);
+            transform: rotate3d(-1, 0, 0, 90deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(-1, 0, 0, 90deg);
+            transform: rotate3d(-1, 0, 0, 90deg);
+  }
+}
+
+@-webkit-keyframes bottom-to-top {
+  0% {
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+            transform: rotate3d(1, 0, 0, 90deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+            transform: rotate3d(1, 0, 0, 90deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0);
+            transform: rotate3d(0);
+  }
+}
+
+@keyframes bottom-to-top {
+  0% {
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+            transform: rotate3d(1, 0, 0, 90deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+            transform: rotate3d(1, 0, 0, 90deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0);
+            transform: rotate3d(0);
+  }
+}
+
+body .container .countdown-clock .countdown p {
+  text-transform: uppercase;
+  color: #8486a9;
+}
+
+@media (min-width: 1440px) {
+  body .container .countdown-clock .countdown p {
+    font-size: 1rem;
+    margin: 2rem 0;
+    letter-spacing: 0.6rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  body .container .countdown-clock .countdown p {
+    font-size: 0.8rem;
+    margin: 1.5rem 0;
+    letter-spacing: 0.6rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1024px) {
+  body .container .countdown-clock .countdown p {
+    font-size: 0.6rem;
+    margin: 1rem 0;
+    letter-spacing: 0.6rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body .container .countdown-clock .countdown p {
+    font-size: 0.4rem;
+    margin: 1rem 0;
+    letter-spacing: 0.2rem;
+  }
+}
+
+body .container .modal {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  z-index: 3;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+body .container .modal .modal-content {
+  height: 30rem;
+  width: 20rem;
+  background-color: rgba(37, 29, 44, 0.8);
+  border: 2px solid #343650;
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+body .container .modal .modal-content .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+body .container .modal .modal-content .close img:hover {
+  -webkit-filter: invert(58%) sepia(38%) saturate(4955%) hue-rotate(310deg) brightness(101%) contrast(102%);
+          filter: invert(58%) sepia(38%) saturate(4955%) hue-rotate(310deg) brightness(101%) contrast(102%);
+}
+
+body .container .modal .modal-content .clock-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+}
+
+body .container .modal .modal-content .clock-form .input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5rem;
+}
+
+body .container .modal .modal-content .clock-form .input-group label {
+  margin: 0.5rem;
+  color: #d64f70;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+body .container .modal .modal-content .clock-form .input-group input {
+  border: 1px solid #343650;
+  border-radius: 0.5rem;
+  width: 3rem;
+  background: #2c2c44;
+  padding: 0.5rem;
+  text-align: center;
+  color: #d64f70;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+body .container .modal .modal-content .clock-form .input-group input:focus {
+  outline: none;
+  border: 0.5px solid #ff5c89;
+  border-radius: 0.5rem;
+}
+
+body .container .modal .modal-content .clock-form .input-group input::-webkit-outer-spin-button, body .container .modal .modal-content .clock-form .input-group input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body .container .modal .modal-content .clock-form .input-group input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body .container .modal .modal-content .clock-form .startBtn {
+  padding: 0.5rem;
+  margin: 1rem;
+  border: 1px solid #1e1e28;
+  border-radius: 0.5rem;
+  width: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #ff5c89;
+  font-weight: 700;
+  background: #343650;
+  cursor: pointer;
+}
+
+body .container .modal .modal-content .clock-form .startBtn:hover {
+  background-color: #ff5c89;
+  color: #343650;
+}
+
+body .container .modal .modal-content .clock-form .startBtn:active {
+  background-color: #343650;
+  color: #ff5c89;
+  border-color: #ff5c89;
+}
+
+body .container footer {
+  position: absolute;
+  bottom: 0;
+}
+
+body .container footer .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 1rem;
+}
+
+body .container footer .social a img:hover {
+  -webkit-filter: invert(58%) sepia(38%) saturate(4955%) hue-rotate(310deg) brightness(101%) contrast(102%);
+          filter: invert(58%) sepia(38%) saturate(4955%) hue-rotate(310deg) brightness(101%) contrast(102%);
+}
+
+@media (min-width: 1440px) {
+  body .container footer .social a img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  body .container footer .social a img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  body .container footer .social a img {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+body .container footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+body .container footer .attribution p {
+  color: #8486a9;
+}
+
+body .container footer .attribution p a {
+  color: #3e52a3;
+}
+
+body .container footer .attribution p a:hover {
+  color: #ff5c89;
+}
+
+@media (min-width: 1440px) {
+  body .container footer .attribution {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 1439px) {
+  body .container footer .attribution {
+    padding: 1rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
