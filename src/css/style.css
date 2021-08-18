@@ -961,9 +961,9 @@ body .container footer .attribution p a:hover {
     padding: 1rem;
   }
 }
-    body .container .countdown-clock {
+body .container .countdown-clock {
     width: 70rem !important;
-  }
+}
 @media (min-width: 1025px) and (max-width: 1439px){
   body .container .countdown-clock {
     width: 60rem;
